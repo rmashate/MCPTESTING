@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wordle for Kids</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #f0f2f5;
+        }
+        .game-container {
+            margin-top: 20px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .word-grid {
+            display: grid;
+            grid-gap: 5px;
+            margin-bottom: 20px;
+        }
+        .word-row {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            grid-gap: 5px;
+        }
+        .letter-box {
+            width: 50px;
+            height: 50px;
+            border: 2px solid #ccc;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        .correct {
+            background-color: #6aaa64;
+            color: white;
+            border-color: #6aaa64;
+        }
+        .wrong-position {
+            background-color: #c9b458;
+            color: white;
+            border-color: #c9b458;
+        }
+        .wrong {
+            background-color: #787c7e;
+            color: white;
+            border-color: #787c7e;
+        }
+        .clue {
+            font-size: 18px;
+            margin-bottom: 15px;
+            color: #2c3e50;
+            text-align: center;
+        }
+        .keyboard {
+            display: grid;
+            grid-gap: 5px;
+            margin-top: 20px;
+        }
+        .keyboard-row {
+            display: grid;
+            grid-gap: 5px;
+            justify-content: center;
+        }
+        .key {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            background-color: #d3d6da;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .key:hover {
+            background-color: #bbb;
+        }
+        #result-message {
+            margin-top: 20px;
+            font-size: 20px;
+            font-weight: bold;
+            text-align: center;
+        }
+        .success {
+            color: #6aaa64;
+        }
+        .failure {
+            color: #dc3545;
+        }
+    </style>
+</head>
+<body>
+    <h1>Wordle for Kids</h1>
+    <div class="game-container">
+        <div class="clue" id="clue"></div>
+        <div class="word-grid" id="grid"></div>
+        <div class="keyboard" id="keyboard"></div>
+        <div id="result-message"></div>
+    </div>
+    <script src="/js/script.js"></script>
+</body>
+</html>
